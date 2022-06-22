@@ -52,3 +52,38 @@ $(function(){
 <button id="opener">ダイアログを開く</button>
 <div id="dialog" title="Dialog Title" style="display:none;">アップロードしますか?</div>
 ```
+
+## ( 3 )
+```javascript
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link id="link" rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<script>
+$(function(){
+
+	$( "#opener" ).click(function() {
+		$( "#dialog" ).dialog({
+			modal: true,
+			title: "ダイアログのタイトルです",
+			close: function() {
+				$( this ).dialog( "close" );
+			},
+			buttons: [
+				{
+					text: "キャンセル",
+					click: function() {
+						$( this ).dialog( "close" );
+					}
+				}
+			]
+		});
+	});
+
+});
+</script>
+
+
+<button id="opener">ダイアログを開く</button>
+<div id="dialog" title="Dialog Title" style="display:none;">アップロードしますか?</div>
+```
