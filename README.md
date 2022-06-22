@@ -166,3 +166,46 @@ $(function(){
     <a href=".." style="float:right;text-decoration:none;">🧲</a>
 </h3>
 ```
+
+
+### jQuery を使わない FORM 送信
+```javascript
+
+<script>
+function send_data(){
+
+	if ( confirm("OK") ) {
+
+		// 現在の日付データ
+	        var dateNow = new Date();
+		console.log( dateNow );
+		console.log( dateNow.getFullYear() );
+		console.log(dateNow.getMonth());
+		console.log( "0" + (dateNow.getMonth()+1) );
+		console.log( ("000000" + (dateNow.getMonth()+1)).slice(-2)  );
+		console.log(dateNow.getDate());
+
+	        var dateString = 
+	            dateNow.getFullYear() + "/" + 
+	            ("0"+(dateNow.getMonth()+1)).slice(-2)+ "/" + 
+	            ("0"+(dateNow.getDate())).slice(-2);
+	        var timeString = 
+	            ("0"+(dateNow.getHours())).slice(-2) + ":" + 
+	            ("0"+(dateNow.getMinutes())).slice(-2) + ":" + 
+	            ("0"+(dateNow.getSeconds())).slice(-2);
+
+		document.getElementById("datetime").value = dateString + " " + timeString;
+
+		return true;
+	}
+
+	return false;
+
+}
+</script>
+
+<form id="frm" onsubmit="return send_data();">
+<input type="hidden" name="datetime" id="datetime">
+<input id="send" name="send" type="submit" value="送信">
+</form>
+```
