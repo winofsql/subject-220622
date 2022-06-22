@@ -128,3 +128,32 @@ $(function(){
 <button id="opener">ダイアログを開く</button>
 <div id="dialog" title="Dialog Title" style="display:none;">アップロードしますか?</div>
 ```
+
+### toastr.js 
+```javascript
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.css">
+
+<script>
+jQuery.isMobile = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
+toastr.options={"closeButton":false,"debug":false,"newestOnTop":false,"progressBar":false,"positionClass":"toast-bottom-center","preventDuplicates":false,"onclick":null,"showDuration":"300","hideDuration":"1000","timeOut":"3000","extendedTimeOut":"1000","showEasing":"swing","hideEasing":"linear","showMethod":"fadeIn","hideMethod":"fadeOut"};
+if ( !$.isMobile ) {
+    toastr.options.positionClass = "toast-top-center";
+}
+
+
+$(function(){
+	$("#btn").on( "click", function(){
+
+		toastr.error("エラーです");
+
+	});
+});
+
+
+
+</script>
+<input id="btn" name="btn" type="button" value="実行">
+```
+
