@@ -35,17 +35,14 @@ $(function(){
 <script>
 $(function(){
 
-	$( "#dialog" ).dialog({
-		autoOpen: false,
-		modal: true,
-		title: "ダイアログのタイトルです",
-		close: function() {
-			$( this ).dialog( "close" );
-		}
-	});
-
 	$( "#opener" ).click(function() {
-		$( "#dialog" ).dialog( "open" );
+		$( "#dialog" ).dialog({
+			modal: true,
+			title: "ダイアログのタイトルです",
+			close: function() {
+				$( this ).dialog( "close" );
+			}
+		});
 	});
 
 });
