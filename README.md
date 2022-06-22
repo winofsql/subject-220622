@@ -157,3 +157,12 @@ $(function(){
 <input id="btn" name="btn" type="button" value="実行">
 ```
 
+### アンカーを右端に移動( float:right )
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+
+<h3 class="alert alert-primary">
+    <a href="control.php" style="text-decoration:none;">掲示板</a>
+    <a href=".." style="float:right;text-decoration:none;">🧲</a>
+</h3>
+```
